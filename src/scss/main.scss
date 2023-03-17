@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+// Variables
+$outer-padding: 2.5rem;
+$primary: #ffffff;
+$secondary: #8c7ae6;
+$third: #fbc531;
+
+
+
+
+body,html {
+  line-height: 1.4;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 62.5%;
+  position: relative;
+}
+
+h1 {
+  font-size: 3.2rem;
+}
+h2 {
+  font-size: 2.6rem;
+}
+h3 {
+  font-size: 2.2rem;;
+}
+h4 {
+  font-size: 2rem;
+}
+
+p,a {
+  font-size: 1.3rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+
+// UTILITIES
+.btn {
+  position: relative;
+  padding: 1.5rem 3rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  font-weight: 700;
+  cursor: pointer;
+  background: $third;
+  text-transform: uppercase;
+
+  &:hover {
+    color: #000;
+    background: linear-gradient(180deg,#fbc531c8 0%, #fbc531  100%);
+    box-shadow: 0 1px 1px #00000074; 
+  }
+}
+
+
+
+// .btn.btn-slide::before {
+//   content: '';
+//   position: absolute;
+//   border-radius: 3rem;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   background: $secondary;
+//   z-index: -1;
+
+//   transition:
+//     transform 250ms ease-in-out;
+
+//   transform: scaleX(0);
+//   transform-origin: left;
+// }
+
+// .btn.btn-slide:focus::before,
+// .btn.btn-slide:hover::before {
+//   transform: scaleX(1);
+// }
+
+// .btn.btn-slide {
+//   z-index: 1;
+// }
+
+
+// H E A D E R
+header {
+  background: $primary;
+
+  ul {
+    display: none;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    a {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+  }
+
+  .h-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: $outer-padding;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.303);
+
+    i {
+      font-size: 2rem;
+    }
+  }
+}
+
+// MAIN
+
+// HERO
+#hero {
+  padding: 7rem 2.5rem 2.5rem 2.5rem;
+  text-align: center;
+
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    align-items: center;
+
+    h1 {
+      font-size: 2.8rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+    p {
+      line-height: 1.5;
+      font-size: 1.6rem;
+      max-width: 480px;
+    }
+  }
+
+  .hero-btns {
+    padding-top: 2.5rem;
+    display: flex;
+    gap: 3rem;
+  }
+}
+
+
+
+
+// KEYFRAMES
+// @keyframes btnhover {
+//   0% {
+//     background: rgba(80, 203, 168, 0.5);
+//   }
+
+//   100% {
+//     background: rgba(80, 203, 168, 1);
+//   }
+// }
+
+// Media Queries
+
+@media screen 
+  and (min-width: 768px)
+  and (max-width: 1200px){
+  
+}
