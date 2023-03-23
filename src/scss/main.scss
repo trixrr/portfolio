@@ -11,6 +11,7 @@ $outer-padding: 2.5rem;
 $primary: #ffffff;
 $secondary: #8c7ae6;
 $third: #fbc531;
+$section-spacing: 7rem 2.5rem 2.5rem 2.5rem;
 
 
 
@@ -109,7 +110,7 @@ header {
     flex-direction: column;
     padding: 1rem 1rem;
     border-radius: 0rem 1rem 1rem 0;
-    top: 50%;
+    top: 30%;
     display: none;
 
 
@@ -155,9 +156,39 @@ header {
     display: flex;
     gap: 3rem;
   }
-
 }
 
+
+.tech-stack {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3rem;
+  padding: $section-spacing;
+  margin-top: 3rem;
+  background-color: $third;
+
+
+  // grid areas
+  .gb1 {
+    grid-area: one;
+  }
+  .gb2 {
+    grid-area: two;
+  }
+  .gb3 {
+    grid-area: three;
+  }
+
+
+  .grid-tech-wrapper {
+    display: grid;
+    grid-template-areas: 
+      'one'
+      'two'
+      'three'
+  }
+}
 
 
 

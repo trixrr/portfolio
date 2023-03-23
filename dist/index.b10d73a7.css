@@ -96,7 +96,7 @@ header .h-container i {
   padding: 1rem;
   display: none;
   position: absolute;
-  top: 50%;
+  top: 30%;
 }
 
 #main .socials-sidebar i {
@@ -137,6 +137,35 @@ header .h-container i {
   gap: 3rem;
   padding-top: 2.5rem;
   display: flex;
+}
+
+.tech-stack {
+  background-color: #fbc531;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding: 7rem 2.5rem 2.5rem;
+  display: flex;
+}
+
+.tech-stack .gb1 {
+  grid-area: one;
+}
+
+.tech-stack .gb2 {
+  grid-area: two;
+}
+
+.tech-stack .gb3 {
+  grid-area: three;
+}
+
+.tech-stack .grid-tech-wrapper {
+  grid-template-areas: "one"
+                       "two"
+                       "three";
+  display: grid;
 }
 
 @media screen and (min-width: 968px) and (max-width: 1200px) {
