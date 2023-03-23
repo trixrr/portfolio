@@ -44,6 +44,10 @@ a {
   color: #000;
 }
 
+i {
+  font-size: 2rem;
+}
+
 
 // UTILITIES
 .btn {
@@ -62,35 +66,6 @@ a {
     box-shadow: 0 1px 1px #00000074; 
   }
 }
-
-
-
-// .btn.btn-slide::before {
-//   content: '';
-//   position: absolute;
-//   border-radius: 3rem;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   background: $secondary;
-//   z-index: -1;
-
-//   transition:
-//     transform 250ms ease-in-out;
-
-//   transform: scaleX(0);
-//   transform-origin: left;
-// }
-
-// .btn.btn-slide:focus::before,
-// .btn.btn-slide:hover::before {
-//   transform: scaleX(1);
-// }
-
-// .btn.btn-slide {
-//   z-index: 1;
-// }
 
 
 // H E A D E R
@@ -126,6 +101,31 @@ header {
 }
 
 // MAIN
+#main {
+  .socials-sidebar {
+    position: absolute;
+    display: flex;
+    background: $third;
+    flex-direction: column;
+    padding: 1rem 1rem;
+    border-radius: 0rem 1rem 1rem 0;
+    top: 50%;
+    display: none;
+
+
+    i {
+      margin: 1rem 0;
+      cursor: pointer;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+
+  }
+}
+
 
 // HERO
 #hero {
@@ -155,6 +155,7 @@ header {
     display: flex;
     gap: 3rem;
   }
+
 }
 
 
@@ -174,7 +175,9 @@ header {
 // Media Queries
 
 @media screen 
-  and (min-width: 768px)
+  and (min-width: 968px)
   and (max-width: 1200px){
-  
+  #main .socials-sidebar {
+    display: flex;
+  }
 }

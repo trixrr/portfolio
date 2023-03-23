@@ -37,6 +37,10 @@ a {
   text-decoration: none;
 }
 
+i {
+  font-size: 2rem;
+}
+
 .btn {
   cursor: pointer;
   text-transform: uppercase;
@@ -85,6 +89,26 @@ header .h-container i {
   font-size: 2rem;
 }
 
+#main .socials-sidebar {
+  background: #fbc531;
+  border-radius: 0 1rem 1rem 0;
+  flex-direction: column;
+  padding: 1rem;
+  display: none;
+  position: absolute;
+  top: 50%;
+}
+
+#main .socials-sidebar i {
+  cursor: pointer;
+  opacity: .8;
+  margin: 1rem 0;
+}
+
+#main .socials-sidebar i:hover {
+  opacity: 1;
+}
+
 #hero {
   text-align: center;
   padding: 7rem 2.5rem 2.5rem;
@@ -113,6 +137,12 @@ header .h-container i {
   gap: 3rem;
   padding-top: 2.5rem;
   display: flex;
+}
+
+@media screen and (min-width: 968px) and (max-width: 1200px) {
+  #main .socials-sidebar {
+    display: flex;
+  }
 }
 
 /*# sourceMappingURL=index.b10d73a7.css.map */
