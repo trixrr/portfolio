@@ -12,6 +12,8 @@ $primary: #ffffff;
 $secondary: #8c7ae6;
 $third: #fbc531;
 $section-spacing: 7rem 2.5rem 2.5rem 2.5rem;
+$tablet-spacing: 7rem 7rem;
+$section-heading: 4.8rem;
 
 
 
@@ -36,7 +38,7 @@ h4 {
   font-size: 2rem;
 }
 
-p,a {
+p,a, span, li {
   font-size: 1.3rem;
 }
 
@@ -47,6 +49,14 @@ a {
 
 i {
   font-size: 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 
@@ -130,8 +140,9 @@ header {
 
 // HERO
 #hero {
-  padding: 7rem 2.5rem 2.5rem 2.5rem;
+  padding: $section-spacing;
   text-align: center;
+  position: relative;
 
   .hero-info {
     display: flex;
@@ -155,19 +166,38 @@ header {
     padding-top: 2.5rem;
     display: flex;
     gap: 3rem;
+    z-index: 3;
   }
 }
 
+// TECH STACK
 
 .tech-stack {
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 3rem;
   padding: $section-spacing;
-  margin-top: 3rem;
+  margin-top: 23rem;
   background-color: $third;
+  z-index: 2;
 
+  &::before {
+    content: '';
+    position: absolute;
+    top: -16rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 434px;
+    background: url('/src/img/wave-haikei.svg') bottom center/cover;
+    z-index: -1;
+  }
+
+  h2 {
+    font-size: $section-heading;
+  }
 
   // grid areas
   .gb1 {
@@ -179,16 +209,267 @@ header {
   .gb3 {
     grid-area: three;
   }
+  .gb4 {
+    grid-area: four;
+  }
+  .gb5 {
+    grid-area: five;
+  }
 
 
   .grid-tech-wrapper {
     display: grid;
     grid-template-areas: 
-      'one'
-      'two'
-      'three'
+      'one two'
+      'three four'
+      'five five';
+      grid-auto-columns: 1fr;
+      gap: 3rem 1.5rem;
+      
+      
+  .grid-box {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    box-shadow: 0 8px 16px -4px rgba(0,0,0,.2);
+    border-radius: 1.6rem;
+
+    h3 {
+      font-size: 1.5rem;
+    }
+
+      i {
+        font-size: 6.5rem;
+        margin: 0 2rem;
+      }
+    }  
   }
 }
+
+// PROJECTS
+
+  #projects {
+    display: flex;
+    flex-direction: column;
+    padding: $section-spacing;
+
+    h2 {
+      text-align: center;
+      text-transform: uppercase;
+      font-size: $section-heading;
+      margin: 6rem 0;
+    }
+
+    .project-grid-wrapper {
+      display: grid;
+      gap: 4rem;
+      grid-template-areas: 
+      'one'
+      'two'
+      'three';
+    }
+
+    .project-box {
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0px 8px 16px -4px rgba(0,0,0,0.2);
+      border-radius: 1.6rem;
+
+      img {
+        width: 100%;
+      }
+
+      &:nth-child(1) {
+        grid-area: one;
+      }
+      &:nth-child(2) {
+        grid-area: two;
+      }
+      &:nth-child(3) {
+        grid-area: three;
+      }
+    }
+
+    .project-details {
+      padding: 1.6rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .upper {
+
+      span {
+        margin-top: 1rem;
+        font-size: 1.2rem;
+        padding: 0.5rem 1rem;
+        background: $third;
+        border-radius: 0.5rem;
+        display: inline-block;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      i {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+//
+
+
+// ABOUT
+
+  #about-me {
+    padding: $section-spacing;
+
+    h2 {
+      font-size: $section-heading;
+      text-align: center;
+      margin: 6rem 0;
+    }
+
+    .about-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+
+
+      .about-info {
+        padding-top: 2rem;
+
+
+        h3 {
+          text-align: center;
+          margin-bottom: 2rem;
+        }
+
+        ul {
+          background: $third;
+          padding: 1rem;
+          border-radius: 0.5rem;
+
+          li {
+            font-size: 1.6rem;
+            list-style: inside;
+            font-weight: 100;
+            margin: 0.5rem 0;
+          }
+        }
+
+        .about-details  {
+
+          display: flex;
+          flex-direction: column;
+
+          > p {
+            margin: 1rem 0;
+            font-size: 1.6rem;
+            line-height: 1.7;
+          }
+
+          p {
+            &:nth-last-child(1) {
+              margin: 4rem 0;
+            }
+
+            span {
+              padding: 0.5rem 1rem;
+              background: $third;
+              font-weight: bold;
+              border-radius: 0.5rem;
+              cursor: pointer;
+              font-size: 2rem;
+            }
+          }
+
+          > span {
+            display: block;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            margin: 3rem 0;
+            background: $third;
+            border-radius: 0.5rem;
+            font-size: 2rem;
+            text-align: center;
+          }
+          
+        }
+      }
+    }
+  }
+
+//
+
+
+
+// FOOTER 
+
+  #footer {
+    padding: $section-spacing;
+    background: #000;
+    color: #fff;
+
+    h2 {
+      text-transform: uppercase;
+    }
+
+    .social-icons {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      margin-bottom: 5rem;
+
+      > div{
+        display: flex;
+        gap: 2rem;
+
+        i {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .footer-notes {
+       
+      h2 {
+        margin-bottom: 3rem;
+      }
+
+      p {
+        margin: 2rem 0;
+      }
+
+    }
+
+    span {
+      font-size: 1rem;
+    }
+
+    hr {
+      border: 1px solid $third;
+      margin: 2rem 0;
+    }
+
+    h4 {
+      font-weight: 400;
+      font-size: 1.3rem;
+    }
+  }
+
+
+// 
+
+
 
 
 
@@ -203,12 +484,216 @@ header {
 //   }
 // }
 
+
+
+
 // Media Queries
+
+// TABLETS 
+
+@media screen 
+  and (min-width: 768px)
+  and (max-width: 968px) {
+
+    .tech-stack {
+
+      &::before {
+        content: '';
+        position: absolute;
+        top: -33rem;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 434px;
+        background: url('/src/img/wave-desktop.svg') bottom center/cover;
+        z-index: -1;
+    }
+
+    .grid-tech-wrapper {
+      grid-template-areas: 
+        'one two three'
+        'four five null';
+    }
+  }  
+  
+  #projects {
+    padding: $tablet-spacing;
+
+    .project-grid-wrapper {
+      display: grid;
+      gap: 4rem;
+      grid-template-areas: 
+      'one two'
+      'three null';
+    }
+  } 
+
+  #about-me {
+
+    .about-wrapper {
+      padding: $tablet-spacing;
+
+      img {
+        height: 500px;
+        width: 500px;
+        object-fit: cover;
+      }
+
+      .about-details {
+        display: flex;
+        flex-direction: column;
+
+        ul {
+          align-self: center;
+
+          li {
+            font-size: 2rem;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// LAPTOPS 
 
 @media screen 
   and (min-width: 968px)
-  and (max-width: 1200px){
+  and (max-width: 2600px) {
+
   #main .socials-sidebar {
     display: flex;
+    margin-left: -3rem;
+  }
+
+  .tech-stack {
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: -33rem;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      height: 434px;
+      background: url('/src/img/wave-desktop.svg') bottom center/cover;
+      z-index: -1;
+  }
+  .grid-tech-wrapper {
+    grid-template-areas: 
+      'one two three four five';
+
+    .grid-box {
+      transition: 
+        transform 250ms ease, 
+        background 100ms ease;
+
+      &:hover {
+        transform: scale(1.1);
+        background: #000;
+
+        h3 {
+          color: $third;
+        }
+
+        i {
+          color: $third;
+        }
+      }
+    }
   }
 }
+
+
+// PROJECTS
+  #projects {
+
+    // .project-box {
+    //   max-width: 600px;
+    // }
+
+    .project-grid-wrapper {
+      grid-template-areas: 
+        'one two three';
+    }
+
+  }
+
+//
+
+//  ABOUT ME
+
+  #about-me {
+
+    .about-wrapper {
+
+      img {
+        height: 700px;
+        width: 700px;
+        object-fit: cover;
+      }
+
+      .about-info {
+        max-width: 700px;
+
+        ul {
+          align-self: center;
+        }
+      }
+    }
+  }
+
+// 
+
+
+// FOOTER 
+
+  #footer {
+    padding: 10rem 30rem;
+  }
+
+// 
+
+}
+
+
+@media screen 
+  and (min-width: 1400px)
+  and (max-width: 1600px) {
+
+    .tech-stack {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -25rem;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 472px;
+        background: url('/src/img/wave-desktop.svg') bottom center/cover;
+        z-index: -1;
+    }
+  }
+}
+
+@media screen 
+  and (min-width: 1600px)
+  and (max-width: 2900px) {
+
+    .tech-stack {
+      &::before {
+        content: '';
+        position: absolute;
+        top: -25rem;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 472px;
+        background: url('/src/img/wave-desktop.svg') bottom center/cover;
+        z-index: -1;
+    }
+  }
+  }
+

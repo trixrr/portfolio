@@ -28,7 +28,7 @@ h4 {
   font-size: 2rem;
 }
 
-p, a {
+p, a, span, li {
   font-size: 1.3rem;
 }
 
@@ -39,6 +39,14 @@ a {
 
 i {
   font-size: 2rem;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
 }
 
 .btn {
@@ -112,6 +120,7 @@ header .h-container i {
 #hero {
   text-align: center;
   padding: 7rem 2.5rem 2.5rem;
+  position: relative;
 }
 
 #hero .hero-info {
@@ -134,19 +143,35 @@ header .h-container i {
 }
 
 #hero .hero-btns {
+  z-index: 3;
   gap: 3rem;
   padding-top: 2.5rem;
   display: flex;
 }
 
 .tech-stack {
+  z-index: 2;
   background-color: #fbc531;
   flex-direction: column;
   align-items: center;
   gap: 3rem;
-  margin-top: 3rem;
+  margin-top: 23rem;
   padding: 7rem 2.5rem 2.5rem;
   display: flex;
+  position: relative;
+}
+
+.tech-stack:before {
+  content: "";
+  height: 434px;
+  z-index: -1;
+  background: url("wave-haikei.0946d70a.svg") bottom / cover;
+  position: absolute;
+  inset: -16rem 0 0;
+}
+
+.tech-stack h2 {
+  font-size: 4.8rem;
 }
 
 .tech-stack .gb1 {
@@ -161,16 +186,360 @@ header .h-container i {
   grid-area: three;
 }
 
+.tech-stack .gb4 {
+  grid-area: four;
+}
+
+.tech-stack .gb5 {
+  grid-area: five;
+}
+
 .tech-stack .grid-tech-wrapper {
-  grid-template-areas: "one"
-                       "two"
-                       "three";
+  grid-template-areas: "one two"
+                       "three four"
+                       "five five";
+  grid-auto-columns: 1fr;
+  gap: 3rem 1.5rem;
   display: grid;
 }
 
-@media screen and (min-width: 968px) and (max-width: 1200px) {
-  #main .socials-sidebar {
+.tech-stack .grid-tech-wrapper .grid-box {
+  border-radius: 1.6rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  display: flex;
+  box-shadow: 0 8px 16px -4px #0003;
+}
+
+.tech-stack .grid-tech-wrapper .grid-box h3 {
+  font-size: 1.5rem;
+}
+
+.tech-stack .grid-tech-wrapper .grid-box i {
+  margin: 0 2rem;
+  font-size: 6.5rem;
+}
+
+#projects {
+  flex-direction: column;
+  padding: 7rem 2.5rem 2.5rem;
+  display: flex;
+}
+
+#projects h2 {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 6rem 0;
+  font-size: 4.8rem;
+}
+
+#projects .project-grid-wrapper {
+  grid-template-areas: "one"
+                       "two"
+                       "three";
+  gap: 4rem;
+  display: grid;
+}
+
+#projects .project-box {
+  border-radius: 1.6rem;
+  flex-direction: column;
+  display: flex;
+  box-shadow: 0 8px 16px -4px #0003;
+}
+
+#projects .project-box img {
+  width: 100%;
+}
+
+#projects .project-box:nth-child(1) {
+  grid-area: one;
+}
+
+#projects .project-box:nth-child(2) {
+  grid-area: two;
+}
+
+#projects .project-box:nth-child(3) {
+  grid-area: three;
+}
+
+#projects .project-details {
+  flex-direction: column;
+  gap: 2rem;
+  padding: 1.6rem;
+  display: flex;
+}
+
+#projects .upper span {
+  background: #fbc531;
+  border-radius: .5rem;
+  margin-top: 1rem;
+  padding: .5rem 1rem;
+  font-size: 1.2rem;
+  display: inline-block;
+}
+
+#projects .bottom {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+}
+
+#projects .bottom i {
+  font-size: 1.5rem;
+}
+
+#about-me {
+  padding: 7rem 2.5rem 2.5rem;
+}
+
+#about-me h2 {
+  text-align: center;
+  margin: 6rem 0;
+  font-size: 4.8rem;
+}
+
+#about-me .about-wrapper {
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  display: flex;
+}
+
+#about-me .about-wrapper .about-info {
+  padding-top: 2rem;
+}
+
+#about-me .about-wrapper .about-info h3 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+#about-me .about-wrapper .about-info ul {
+  background: #fbc531;
+  border-radius: .5rem;
+  padding: 1rem;
+}
+
+#about-me .about-wrapper .about-info ul li {
+  margin: .5rem 0;
+  font-size: 1.6rem;
+  font-weight: 100;
+  list-style: inside;
+}
+
+#about-me .about-wrapper .about-info .about-details {
+  flex-direction: column;
+  display: flex;
+}
+
+#about-me .about-wrapper .about-info .about-details > p {
+  margin: 1rem 0;
+  font-size: 1.6rem;
+  line-height: 1.7;
+}
+
+#about-me .about-wrapper .about-info .about-details p:nth-last-child(1) {
+  margin: 4rem 0;
+}
+
+#about-me .about-wrapper .about-info .about-details p span {
+  cursor: pointer;
+  background: #fbc531;
+  border-radius: .5rem;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+#about-me .about-wrapper .about-info .about-details > span {
+  text-align: center;
+  background: #fbc531;
+  border-radius: .5rem;
+  margin: 3rem 0;
+  padding: .5rem 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  display: block;
+}
+
+#footer {
+  color: #fff;
+  background: #000;
+  padding: 7rem 2.5rem 2.5rem;
+}
+
+#footer h2 {
+  text-transform: uppercase;
+}
+
+#footer .social-icons {
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+  display: flex;
+}
+
+#footer .social-icons > div {
+  gap: 2rem;
+  display: flex;
+}
+
+#footer .social-icons > div i {
+  font-size: 3rem;
+}
+
+#footer .footer-notes h2 {
+  margin-bottom: 3rem;
+}
+
+#footer .footer-notes p {
+  margin: 2rem 0;
+}
+
+#footer span {
+  font-size: 1rem;
+}
+
+#footer hr {
+  border: 1px solid #fbc531;
+  margin: 2rem 0;
+}
+
+#footer h4 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+@media screen and (min-width: 768px) and (max-width: 968px) {
+  .tech-stack:before {
+    content: "";
+    height: 434px;
+    z-index: -1;
+    background: url("wave-desktop.6a814bb2.svg") bottom / cover;
+    position: absolute;
+    inset: -33rem 0 0;
+  }
+
+  .tech-stack .grid-tech-wrapper {
+    grid-template-areas: "one two three"
+                         "four five null";
+  }
+
+  #projects {
+    padding: 7rem;
+  }
+
+  #projects .project-grid-wrapper {
+    grid-template-areas: "one two"
+                         "three null";
+    gap: 4rem;
+    display: grid;
+  }
+
+  #about-me .about-wrapper {
+    padding: 7rem;
+  }
+
+  #about-me .about-wrapper img {
+    height: 500px;
+    width: 500px;
+    object-fit: cover;
+  }
+
+  #about-me .about-wrapper .about-details {
+    flex-direction: column;
     display: flex;
+  }
+
+  #about-me .about-wrapper .about-details ul {
+    align-self: center;
+  }
+
+  #about-me .about-wrapper .about-details ul li {
+    padding: 1rem;
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 968px) and (max-width: 2600px) {
+  #main .socials-sidebar {
+    margin-left: -3rem;
+    display: flex;
+  }
+
+  .tech-stack:before {
+    content: "";
+    height: 434px;
+    z-index: -1;
+    background: url("wave-desktop.6a814bb2.svg") bottom / cover;
+    position: absolute;
+    inset: -33rem 0 0;
+  }
+
+  .tech-stack .grid-tech-wrapper {
+    grid-template-areas: "one two three four five";
+  }
+
+  .tech-stack .grid-tech-wrapper .grid-box {
+    transition: transform .25s, background .1s;
+  }
+
+  .tech-stack .grid-tech-wrapper .grid-box:hover {
+    background: #000;
+    transform: scale(1.1);
+  }
+
+  .tech-stack .grid-tech-wrapper .grid-box:hover h3, .tech-stack .grid-tech-wrapper .grid-box:hover i {
+    color: #fbc531;
+  }
+
+  #projects .project-grid-wrapper {
+    grid-template-areas: "one two three";
+  }
+
+  #about-me .about-wrapper img {
+    height: 700px;
+    width: 700px;
+    object-fit: cover;
+  }
+
+  #about-me .about-wrapper .about-info {
+    max-width: 700px;
+  }
+
+  #about-me .about-wrapper .about-info ul {
+    align-self: center;
+  }
+
+  #footer {
+    padding: 10rem 30rem;
+  }
+}
+
+@media screen and (min-width: 1400px) and (max-width: 1600px) {
+  .tech-stack:before {
+    content: "";
+    height: 472px;
+    z-index: -1;
+    background: url("wave-desktop.6a814bb2.svg") bottom / cover;
+    position: absolute;
+    inset: -25rem 0 0;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 2900px) {
+  .tech-stack:before {
+    content: "";
+    height: 472px;
+    z-index: -1;
+    background: url("wave-desktop.6a814bb2.svg") bottom / cover;
+    position: absolute;
+    inset: -25rem 0 0;
   }
 }
 
